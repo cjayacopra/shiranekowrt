@@ -1,8 +1,6 @@
 # ShiranekoWrt
 
-ShiranekoWrt is a ready-to-use operating system for the **Arcadyan AW1000** — the 5G WiFi router it comes with. Think of it like the Android or iOS of routers: it's the software that makes your router work. This version (v1.0.0) is built on **OpenWrt 25.12**, the newest, most up-to-date foundation available.
-
-> **A fresh start.** Earlier ShiranekoWrt builds were based on the older OpenWrt 24.10 and are now **no longer supported**. Because this version runs on a completely different foundation, the version number begins again at **v1.0.0**.
+ShiranekoWrt is a ready-to-use operating system for the **Arcadyan AW1000** — the 5G WiFi router it comes with. Think of it like the Android or iOS of routers: it's the software that makes your router work. It's built on **OpenWrt 25.12**, the newest, most up-to-date foundation available.
 
 ---
 
@@ -23,16 +21,6 @@ Once powered on, the router **automatically detects the built-in 5G modem**, con
 
 ---
 
-## What's New in v1.0.0
-
-- **A brand-new foundation** — built on the latest OpenWrt 25.12, a big step up from the older 24.10 base
-- **Faster startup** — the router boots quicker and the front lights go through a smarter, clearer sequence
-- **A refreshed control panel** — cleaner look, better use of your screen, and a **search box** to find any setting instantly
-- **Smoother modem handling** — the 5G connection is managed more quietly in the background, with annoying pop-ups removed
-- **Speed tuning** — confirmed Gigabit speeds on the wired ports and near-Gigabit on WiFi
-
----
-
 ## Using Your Router
 
 ### The Control Panel
@@ -49,12 +37,15 @@ Across the top of the control panel there's a **toolbar** with shortcuts to the 
 - **Bandix** — live charts of your internet traffic and how much bandwidth each device is using
 - **Firmware Update** — update the router in one click (more below)
 
+There's also a **search box** across the top of the control panel to find any setting instantly.
+
 ### Pick Your Look
 
-ShiranekoWrt comes with **two themes**, switchable anytime from **System → Theme Configuration**:
+ShiranekoWrt comes with **three themes**, switchable anytime from **System → Theme Configuration**:
 
 1. **Aurora** (default) — a modern look with light/dark modes, custom colours and fonts, a mega-menu, and a "phone app" mode (install the control panel on your phone's home screen). The default look uses a **custom preset** ShiranekoWrt ships with, inspired by the **Kanagawa Dragon/Lotus** colour palette — the warm paper-toned light mode and the deep, moody dark mode you see on first boot.
 2. **Bootstrap** — the classic, familiar router layout, simple and clean.
+3. **Footstrap** — a clean, lightweight classic layout, simple and easy to read.
 
 **Not a fan of the default look?** You're in full control. Aurora has **several official presets** built in (like Sage Green, Amber Sand, Sky Blue, and Monochrome), each with its own colours, layout shape, and typography — just pick one from the theme settings. Beyond that, Aurora has a **Theme Store** where you can **browse and install complete themes** made by others, fonts included. Nothing is locked down: you can go as deep as you like — tweak individual colours, upload your own fonts, change the layout, add a wallpaper, even upload a custom logo. ShiranekoWrt only sets the starting look; what it becomes is entirely up to you.
 
@@ -120,6 +111,7 @@ The lights on the front of the router are its way of talking to you. Here's what
 
 ## A Few Things to Know
 
+- **It's fast** — Gigabit speeds on the wired ports and near-Gigabit on WiFi.
 - **IPv6 is turned off.** Most home connections don't need it, and it keeps things simple.
 - **The router manages your "phone book" for the internet.** It automatically handles the service that translates website names (like `example.com`) into addresses. If you use a custom DNS service (for example, a Pi-hole), you can change this under **Network → DHCP Server**.
 - **All 5 ports on the back are one big network.** Whether you plug your internet cable or a computer into LAN1 or WAN, it works the same way.
@@ -160,13 +152,13 @@ cat /proc/mtd | grep '"rootfs"$'
 
 ## Using the Router Outside the Philippines
 
-If you live outside the Philippines, check these after first boot (they are not set to any region by default):
+If you live outside the Philippines, check these after first boot. The WiFi country is now **pre-set to the Philippines (PH)** so the router can use the full 5 GHz channel list; if you live outside the Philippines, change it to your own country.
 
-| Setting           | Default                   | Where to Change It                                                         |
-| ----------------- | ------------------------- | -------------------------------------------------------------------------- |
-| **Time zone**     | UTC (or leave as-is)      | **System → System → Time zone**                                            |
-| **WiFi country**  | Not set — choose your own | **Network → Wireless → Edit a network → Advanced Settings → Country Code** |
-| **WiFi channels** | Automatic                 | **Network → Wireless → Edit a network → Channel**                          |
+| Setting           | Default                                   | Where to Change It                                                         |
+| ----------------- | ----------------------------------------- | -------------------------------------------------------------------------- |
+| **Time zone**     | UTC (or leave as-is)                      | **System → System → Time zone**                                            |
+| **WiFi country**  | Philippines (PH) — change to your country | **Network → Wireless → Edit a network → Advanced Settings → Country Code** |
+| **WiFi channels** | Pre-set (5 GHz: 149-161, 2.4 GHz: 1/6/11) | **Network → Wireless → Edit a network → Channel**                          |
 
 Setting your **WiFi country** is the most important one — it makes sure your router only uses the channels and power levels that are legal and safe in your region.
 
