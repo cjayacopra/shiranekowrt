@@ -150,17 +150,17 @@ cat /proc/mtd | grep '"rootfs"$'
 
 ---
 
-## Using the Router Outside the Philippines
+## Set Your Time Zone & WiFi Country
 
-If you live outside the Philippines, check these after first boot. The WiFi country is now **pre-set to the Philippines (PH)** so the router can use the full 5 GHz channel list; if you live outside the Philippines, change it to your own country.
+No matter where you live, set two things after first boot: your **time zone** and your **WiFi country code**. The router does not assume any region by default.
 
-| Setting           | Default                                   | Where to Change It                                                         |
-| ----------------- | ----------------------------------------- | -------------------------------------------------------------------------- |
-| **Time zone**     | UTC (or leave as-is)                      | **System → System → Time zone**                                            |
-| **WiFi country**  | Philippines (PH) — change to your country | **Network → Wireless → Edit a network → Advanced Settings → Country Code** |
-| **WiFi channels** | Pre-set (5 GHz: 149-161, 2.4 GHz: 1/6/11) | **Network → Wireless → Edit a network → Channel**                          |
+| Setting           | Default                                                              | Where to Change It                                                         |
+| ----------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **Time zone**     | UTC                                                                  | **System → System → Time zone**                                            |
+| **WiFi country**  | Not set — choose your own                                            | **Network → Wireless → Edit a network → Advanced Settings → Country Code** |
+| **WiFi channels** | Automatic (5 GHz: UNII-3 channels 149/153/157/161 · 2.4 GHz: 1/6/11) | **Network → Wireless → Edit a network → Channel**                          |
 
-Setting your **WiFi country** is the most important one — it makes sure your router only uses the channels and power levels that are legal and safe in your region.
+Setting your **WiFi country** is the most important one — until you set one, WiFi only uses the default channel list above, which may not include the channels and power levels that are legal in your region. Setting the country makes the router use the right channels and power automatically.
 
 ---
 
