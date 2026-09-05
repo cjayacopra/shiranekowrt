@@ -33,19 +33,16 @@ Across the top of the control panel there's a **toolbar** with shortcuts to the 
 - **WiFi** — change your WiFi names and passwords, switch channels, and adjust wireless settings
 - **Modem Status** — detailed information about your 5G connection: signal strength, network type (5G/4G), which cell tower you're on, and your data usage
 - **QModem** — manage the SIM card and the cellular connection itself, and send/receive **SMS text messages** right from the control panel
-- **Xray** — a tool for advanced users to route internet traffic through a private tunnel (works with VLESS, VMess, Trojan, Shadowsocks, and more)
-- **Bandix** — live charts of your internet traffic and how much bandwidth each device is using
 - **Firmware Update** — update the router in one click (more below)
 
 There's also a **search box** across the top of the control panel to find any setting instantly.
 
 ### Pick Your Look
 
-ShiranekoWrt comes with **three themes**, switchable anytime from **System → Theme Configuration**:
+ShiranekoWrt comes with **two themes**, switchable anytime from **System → Theme Configuration**:
 
 1. **Aurora** (default) — a modern look with light/dark modes, custom colours and fonts, a mega-menu, and a "phone app" mode (install the control panel on your phone's home screen). The default look uses a **custom preset** ShiranekoWrt ships with, inspired by the **Kanagawa Dragon/Lotus** colour palette — the warm paper-toned light mode and the deep, moody dark mode you see on first boot.
-2. **Bootstrap** — the classic, familiar router layout, simple and clean.
-3. **Footstrap** — a clean, lightweight classic layout, simple and easy to read.
+2. **Footstrap** — a clean, lightweight classic layout, simple and easy to read.
 
 **Not a fan of the default look?** You're in full control. Aurora has **several official presets** built in (like Sage Green, Amber Sand, Sky Blue, and Monochrome), each with its own colours, layout shape, and typography — just pick one from the theme settings. Beyond that, Aurora has a **Theme Store** where you can **browse and install complete themes** made by others, fonts included. Nothing is locked down: you can go as deep as you like — tweak individual colours, upload your own fonts, change the layout, add a wallpaper, even upload a custom logo. ShiranekoWrt only sets the starting look; what it becomes is entirely up to you.
 
@@ -59,7 +56,6 @@ The built-in 5G modem works out of the box:
 
 ### Watching Your Internet
 
-- **Bandix** — see live speed graphs and which device is using the most bandwidth
 - **Speed widget** — the main status page shows a live download/upload speed meter (this reflects real traffic on your connection)
 - **Disk Info** — if you plug in a USB drive, see its health, partitions, and temperature
 
@@ -69,7 +65,6 @@ Plug in a USB drive and ShiranekoWrt can:
 
 - Recognise and mount it automatically
 - **Share its files over your network** — the control panel has a **System → Samba** page where you create a shared folder, give it a name, and choose who can see it. This is the option most devices (Windows, Android, smart TVs) understand best.
-- **NFS sharing** is also included for advanced setups. It ships with a **template** export file (`/etc/exports`) that you adapt to your own drives and network — it is **not** a ready-to-use share out of the box, and it has no settings page in the control panel. For detailed setup guides, see the [OpenWrt NFS documentation](https://openwrt.org/docs/guide-user/services/nfs) and the [Arch Linux NFSv4 wiki](https://wiki.archlinux.org/title/NFS)
 - Has a built-in **drive sleep** setting (available in the control panel's Storage tools) that parks idle drives to save power and extend drive life
 
 ### Updating the Router
@@ -183,15 +178,13 @@ ShiranekoWrt would not exist without these projects and their authors:
 | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **[OpenWrt](https://openwrt.org)**      | The core operating system and build system this firmware is built on                                                                                                                           |
 | **[qosmio](https://github.com/qosmio)** | The NSS packages and foundational work that enable hardware-accelerated networking on this chipset                                                                                             |
+| **xhikarishii**                          | [nss-packages (aw1000-nss)](https://github.com/xhikarishii/nss-packages) — the WWAN/ECM packages this firmware's cellular connectivity builds on                                              |
 | **[FuJr](https://github.com/FUjr)**     | QModem — the framework that manages the cellular connection, SMS, and the front lights                                                                                                         |
 | **eamonxg**                             | [luci-theme-aurora](https://github.com/eamonxg/luci-theme-aurora) and [luci-app-aurora-config](https://github.com/eamonxg/luci-app-aurora-config) — the modern theme and its customisation app |
 | **gSpotx2f**                            | [luci-app-disks-info](https://github.com/gSpotx2f/luci-app-disks-info) — USB drive health and info                                                                                             |
-| **yichya**                              | [luci-app-xray](https://github.com/yichya/luci-app-xray) and Xray-core packaging                                                                                                               |
 | **Rafał Wabik (IceG)**                  | [modemdata](https://eko.one.pl/) and [luci-app-modemdata](https://github.com/iceg/luci-app-modemdata) — the modem signal/diagnostics pages                                                     |
 | **smallprogram**                        | [openwrt-ghfu](https://github.com/smallprogram/openwrt-ghfu) — the one-click firmware update page                                                                                              |
-| **timsaya**                             | [bandix](https://github.com/timsaya/bandix) and [luci-app-bandix](https://github.com/timsaya/luci-app-bandix) — live traffic monitoring                                                        |
 | **Cezary Jackiewicz**                   | Original modemdata utility                                                                                                                                                                     |
-| **XTLS**                                | [Xray-core](https://github.com/XTLS/Xray-core) — the engine powering the Xray page                                                                                                             |
 | **ChamodyaChiran**                      | The Expanded storage layout guide for the AW1000                                                                                                                                               |
 | **LuCI community**                      | All the module and theme authors whose work makes the control panel possible                                                                                                                   |
 
