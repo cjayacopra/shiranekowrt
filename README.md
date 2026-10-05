@@ -37,12 +37,13 @@ Across the top of the control panel there's a **toolbar** with shortcuts to the 
 
 There's also a **search box** across the top of the control panel to find any setting instantly.
 
+The **Dashboard** (part of the revamped luci-mod-dashboard) gives you a quick overview of your modem connection right when you open the control panel.
+
 ### Pick Your Look
 
-ShiranekoWrt comes with **two themes**, switchable anytime from **System → Theme Configuration**:
+ShiranekoWrt comes with **one theme**, switchable anytime from **System → Theme Configuration**:
 
-1. **Aurora** (default) — a modern look with light/dark modes, custom colours and fonts, a mega-menu, and a "phone app" mode (install the control panel on your phone's home screen). The default look uses a **custom preset** ShiranekoWrt ships with, inspired by the **Kanagawa Dragon/Lotus** colour palette — the warm paper-toned light mode and the deep, moody dark mode you see on first boot.
-2. **Footstrap** — a clean, lightweight classic layout, simple and easy to read.
+1. **Aurora** (default) — a modern look with a revamped theme for better contrast and overall look, especially in light mode; dark mode, custom colours and fonts, a mega-menu, and a "phone app" mode (install the control panel on your phone's home screen). The default look uses a **custom preset** ShiranekoWrt ships with, inspired by the **Kanagawa Dragon/Lotus** colour palette — the warm paper-toned light mode and the deep, moody dark mode you see on first boot.
 
 **Not a fan of the default look?** You're in full control. Aurora has **several official presets** built in (like Sage Green, Amber Sand, Sky Blue, and Monochrome), each with its own colours, layout shape, and typography — just pick one from the theme settings. Beyond that, Aurora has a **Theme Store** where you can **browse and install complete themes** made by others, fonts included. Nothing is locked down: you can go as deep as you like — tweak individual colours, upload your own fonts, change the layout, add a wallpaper, even upload a custom logo. ShiranekoWrt only sets the starting look; what it becomes is entirely up to you.
 
@@ -57,6 +58,7 @@ The built-in 5G modem works out of the box:
 ### Watching Your Internet
 
 - **Speed widget** — the main status page shows a live download/upload speed meter (this reflects real traffic on your connection)
+- **Bands** — the status page shows the frequency bands your modem is using
 - **Disk Info** — if you plug in a USB drive, see its health, partitions, and temperature
 
 ### USB Storage & File Sharing
@@ -107,7 +109,7 @@ The lights on the front of the router are its way of talking to you. Here's what
 ## A Few Things to Know
 
 - **It's fast** — Gigabit speeds on the wired ports and near-Gigabit on WiFi.
-- **IPv6 is turned off.** Most home connections don't need it, and it keeps things simple.
+- **IPv6 support is included**, but it stays off by default. Most home connections don't need it, and it keeps things simple. You can turn it on under **Network → Interfaces** if your provider requires it.
 - **The router manages your "phone book" for the internet.** It automatically handles the service that translates website names (like `example.com`) into addresses. If you use a custom DNS service (for example, a Pi-hole), you can change this under **Network → DHCP Server**.
 - **All 5 ports on the back are one big network.** Whether you plug your internet cable or a computer into LAN1 or WAN, it works the same way.
 - **Some software shortcuts are intentionally switched off** so the router's built-in hardware accelerator can do its job properly — this is what makes it fast without overheating. You don't need to touch these.
@@ -147,15 +149,15 @@ cat /proc/mtd | grep '"rootfs"$'
 
 ## Set Your Time Zone & WiFi Country
 
-No matter where you live, set two things after first boot: your **time zone** and your **WiFi country code**. The router does not assume any region by default.
+No matter where you live, set your **time zone** after first boot. (The WiFi country code ships preset to **US** — this unlocks the wide 160 MHz channel width the 5 GHz radio defaults to; change it if you live elsewhere, but note some country codes restrict 160 MHz use.)
 
 | Setting           | Default                                                              | Where to Change It                                                         |
 | ----------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | **Time zone**     | UTC                                                                  | **System → System → Time zone**                                            |
-| **WiFi country**  | Not set — choose your own                                            | **Network → Wireless → Edit a network → Advanced Settings → Country Code** |
-| **WiFi channels** | Automatic (5 GHz: UNII-3 channels 149/153/157/161 · 2.4 GHz: 1/6/11) | **Network → Wireless → Edit a network → Channel**                          |
+| **WiFi country**  | US — change to your own if you live elsewhere                         | **Network → Wireless → Edit a network → Advanced Settings → Country Code** |
+| **WiFi channels** | 5 GHz: 160 MHz wide, channels 149/153/157/161 · 2.4 GHz: automatic (1/6/11) | **Network → Wireless → Edit a network → Channel**                    |
 
-Setting your **WiFi country** is the most important one — until you set one, WiFi only uses the default channel list above, which may not include the channels and power levels that are legal in your region. Setting the country makes the router use the right channels and power automatically.
+Setting your **time zone** keeps the clock right. The WiFi country code matters too — if you change it from the US default, WiFi adapts the channel list and power levels to what's legal in your region (and some country codes don't allow the 160 MHz width).
 
 ---
 
