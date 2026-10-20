@@ -57,6 +57,7 @@ The built-in 5G modem works out of the box:
 
 ### Watching Your Internet
 
+- **At a Glance** — the main status page opens with a live summary card: current download and upload speeds (with small history graphs and peak values), how long the router has been running, and whether the internet connection is up
 - **Speed widget** — the main status page shows a live download/upload speed meter (this reflects real traffic on your connection)
 - **Bands** — the status page shows the frequency bands your modem is using
 - **Disk Info** — if you plug in a USB drive, see its health, partitions, and temperature
@@ -67,6 +68,7 @@ Plug in a USB drive and ShiranekoWrt can:
 
 - Recognise and mount it automatically
 - **Share its files over your network** — the control panel has a **System → Samba** page where you create a shared folder, give it a name, and choose who can see it. This is the option most devices (Windows, Android, smart TVs) understand best.
+- **Stream media to TVs and consoles** — a built-in media server (miniDLNA) can broadcast your movies, music, and photos across your home network. Turn it on under **Services → miniDLNA** in the control panel and point it at a folder on your USB drive.
 - Has a built-in **drive sleep** setting (available in the control panel's Storage tools) that parks idle drives to save power and extend drive life
 
 ### Updating the Router
